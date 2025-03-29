@@ -1,0 +1,12 @@
+Data: 19/6/2022 Hora: 19:6:51 - Incluido Livro: O Extraordinario - Codigo: 3
+Data: 19/6/2022 Hora: 19:9:29 - Incluido Livro: A Menina que roubava livros - Codigo: 4
+Data: 19/6/2022 Hora: 19:19:0 - Incluido Aluno: Carlos Augusto Souza Rici - RA: 002201702481
+Data: 19/6/2022 Hora: 19:19:22 - Incluido Aluno: Larissa Munhoz Martins - RA: 002201702478
+Data: 19/6/2022 Hora: 19:19:40 - Incluido Funcionario: Felipe - Codigo: 1
+Data: 19/6/2022 Hora: 19:19:54 - Incluido Funcionario: Andre - Codigo: 2
+Data: 20/6/2022 Hora: 21:27:31 - Incluido Aluno: Teste - RA: 002201700001
+Data: 21/6/2022 Hora: 19:29:36 - Incluido Livro: Macunaima - Codigo: 5
+Data: 21/6/2022 Hora: 19:31:53 - Incluido Aluno: Joao - RA: 002201802345
+Data: 19/2/2025 Hora: 21:26:53 - Incluido Livro: A volta dos que n∆o foram - Codigo: 1210
+Data: 19/2/2025 Hora: 21:29:7 - Incluido Livro: O pequeno principe - Codigo: 1234
+Data: 19/2/2025 Hora: 21:35:5 - Incluido Livro: A cabana - Codigo: 9876
