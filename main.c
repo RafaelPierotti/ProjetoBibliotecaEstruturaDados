@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 #include <time.h>
 
 #define MAX_LINHA 1024
@@ -16,7 +17,10 @@ typedef struct livro{
     char titulo[100];
 	char autor[100];
 	char editora[100];
-
+	char genero[100];
+	int ano_publicacao;
+	float preco;
+    struct Livro* prox;
  //   int qtd_estoque;
 //	int qtd_local;
 	//int qtd_saidos;
@@ -48,6 +52,59 @@ Fila* cria_fila(){
     f->inicio = NULL;
     f->fim = NULL;
     return f;
+}
+
+int vazia(Fila* f){
+    return (f->inicio == NULL);
+}
+
+void enqueue(Fila* f, const char* titulo, const char* autor, const char* editora, const char* genero, int ano_publicacao, float preco){
+    Livro* novoLivro = (Livro*)malloc(sizeof(Livro));
+
+    strcpy(novoLivro->titulo, titulo);
+    strcpy(novoLivro->autor, autor);
+    strcpy(novoLivro->editora, editora);
+    strcpy(novoLivro->genero, genero);
+    novoLivro->ano_publicacao = ano_publicacao;
+    novoLivro->preco = preco;
+    novoLivro->prox = NULL;
+
+    if (f->fim == NULL)
+        f->fim->prox = novoLivro;
+    f->fim = novoLivro;
+    if (f->inicio == NULL)
+        f->inicio = f->fim;
+}
+
+void dequeue(Fila *f){
+    if (vazia(f)){
+        printf("Fila vazia!\n");
+        exit(1);
+    }
+    float temp;
+    temp = f->inicio->titulo;
+    Livro* aux = f->inicio->prox;
+    free(f->inicio);
+    f->inicio = aux;
+    if (f->inicio == NULL)
+        f->fim = NULL;
+    return temp;
+}
+
+void mostrarLivros(Fila* f){
+    Livro* aux;
+    for (aux = f->inicio; aux != NULL, aux = aux->prox)
+        prinf("Título: %s, Autor: %s, Editora: %s, Gênero: %s, Ano de Publicação: %d, Preço: %f\n", aux->titulo, aux->autor, aux->editora, aux->genero, aux->ano_publicacao, aux->preco);
+}
+
+void libera(Fila* f){
+    Livro* aux = f->inicio;
+    while (aux != NULL) {
+        Livro* temp = aux->prox;
+        free(aux);
+        aux = temp;
+    }
+    free(f);
 }
 
 void inclui_livro(){
