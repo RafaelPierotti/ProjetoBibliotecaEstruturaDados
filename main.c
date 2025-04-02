@@ -3,6 +3,7 @@
 //Rafael Pierotti - 202318464
 //Marcelo Duran – 202324984
 //Cauã Zambotto - 202318466
+//Lucas Puppo - 202307847
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -42,7 +43,7 @@ void adicionarLivros(Fila* f, const char* titulo, const char* autor, const char*
         exit(1);
     }
 
-    strncpy(novoLivro->titulo, titulo, sizeof(novoLivro->titulo) - 1);
+    strncpy(novoLivro->titulo, titulo, sizeof(novoLivro->titulo) - 1); // Copia o titulo que o usuário colocar para a váriavel titulo da struct
     novoLivro->titulo[sizeof(novoLivro->titulo) - 1] = '\0';
 
     strncpy(novoLivro->autor, autor, sizeof(novoLivro->autor) - 1);
@@ -89,7 +90,6 @@ void mostrarLivros(Fila* f){
     }
 
     Livro* aux = f->inicio;
-    printf("Debug - listando livros");
     for (aux = f->inicio; aux != NULL; aux = aux->prox)
         printf("\nTítulo: %s, \nAutor: %s, \nEditora: %s, \nGênero: %s, \nAno de Publicação: %d, \nPreço: %.2f\n", aux->titulo, aux->autor, aux->editora, aux->genero, aux->ano_publicacao, aux->preco);
 }
